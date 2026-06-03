@@ -244,8 +244,8 @@ html {
   height: 100%; }
 
 .sidebar-logo {
-  width: 180px;
-  height: 180px;
+  width: 205px;
+  height: 205px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5em;
@@ -254,7 +254,7 @@ html {
   border: 4px solid #eef5fd; }
 
 .sidebar-author {
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: 700;
   margin: 0.3em 0 0.4em;
   text-align: center;
