@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo Barreto | Ph.D. Candidate | University of Minnesota</title>
+  <meta name="author" content="Leonardo Barreto">
+  <meta name="description" content="Leonardo Barreto is a Ph.D. Candidate in Economics at the University of Minnesota and a Research Analyst at the Federal Reserve Bank of Minneapolis. His research focuses on macroeconomics, international economics, and monetary economics."/>
+  <meta name="theme-color" content="#fff6e3" id="meta-theme-color">
+
+  <script>
+  (function() {
+    var storageKey = 'site-theme';
+    var docEl = document.documentElement;
+    var metaTheme = document.getElementById('meta-theme-color');
+    var colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    function readStored() { try { return localStorage.getItem(storageKey); } catch(e) { return null; } }
+    function storePreference(v) { try { localStorage.setItem(storageKey, v); } catch(e) {} }
+    function systemPref() { return colorSchemeQuery && colorSchemeQuery.matches ? 'dark' : 'light'; }
+    function preferredTheme() { var s = readStored(); return (s === 'dark' || s === 'light') ? s : systemPref(); }
+    function emitChange(theme) { try { window.dispatchEvent(new CustomEvent('site-theme-change', { detail: { theme: theme } })); } catch(e) {} }
+    function applyTheme(theme) {
+      docEl.setAttribute('data-theme', theme);
+      docEl.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
+      if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#0f1419' : '#fff6e3');
+      emitChange(theme);
+    }
+    if (readStored() === null) storePreference('system');
+    applyTheme(preferredTheme());
+    window.__setPreferredTheme = function(theme) {
+      if (theme !== 'dark' && theme !== 'light') return;
+      var sys = systemPref();
+      if (theme === sys) storePreference('system'); else storePreference(theme);
+      applyTheme(theme);
+    };
+    if (colorSchemeQuery && typeof colorSchemeQuery.addEventListener === 'function') {
+      colorSchemeQuery.addEventListener('change', function(event) {
+        var stored = readStored();
+        if (stored === 'dark' || stored === 'light') return;
+        storePreference('system');
+        applyTheme(event.matches ? 'dark' : 'light');
+      });
+    }
+  })();
+  </script>
+
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href]').forEach(function(link) {
+      try {
+        var url = new URL(link.getAttribute('href'), window.location.href);
+        if (url.origin !== window.location.origin) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      } catch(e) {}
+    });
+  });
+  </script>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="logo-container">
+        <img src="images/avatar.jpg" alt="Leonardo Barreto" class="sidebar-logo" />
+      </div>
+      <div class="author-container">
+        <h1 class="sidebar-author">Leonardo Barreto</h1>
+      </div>
+      <div class="sidebar-tagline modern-tagline">
+        <div class="tagline-title"><i class="fa fa-university"></i> Research Analyst</div>
+        <div class="tagline-row tagline-sub" style="margin-left:1.7em;"><a href="https://www.minneapolisfed.org/economic-research/economists">Federal Reserve Bank of Minneapolis</a></div>
+        <div class="tagline-row"><i class="fa fa-user-graduate"></i> <span style="font-weight:600">Ph.D. in Economics</span></div>
+        <div class="tagline-row tagline-sub" style="margin-left:1.7em;"><a href="https://cla.umn.edu/economics">University of Minnesota</a></div>
+        <div class="tagline-row"><i class="fa fa-envelope"></i> <a href="mailto:barre843@umn.edu">barre843@umn.edu</a></div>
+        <div class="tagline-row"><i class="fa fa-map-marker-alt"></i> <span class="tagline-sub">Minneapolis, MN 55455</span></div>
+      </div>
+      <nav class="sidebar-menu sleek-menu">
+        <a href="cv/resume_new.pdf" class="menu-icon-labeled" title="Curriculum Vitae"><i class="fa fa-paperclip"></i><span>Curriculum Vitae</span></a>
+        <a href="https://github.com/LeonardoBarretoV" class="menu-icon-labeled" title="GitHub"><i class="fab fa-github"></i><span>GitHub</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="wrapper">
+      <main>
+        <div class="content">
+
+          <!-- GLOBAL STICKY RIBBON -->
+          <div class="section-ribbon sticky-ribbon">
+            <div class="ribbon-nav">
+              <a href="#publications" class="ribbon-link inactive">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <span class="ribbon-label">Publications</span>
+              </a>
+              <span class="ribbon-sep">|</span>
+              <a href="#working-papers" class="ribbon-link inactive">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                <span class="ribbon-label">Working Papers</span>
+              </a>
+              <span class="ribbon-sep">|</span>
+              <a href="#work-in-progress" class="ribbon-link inactive">
+                <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                <span class="ribbon-label">Work in Progress</span>
+              </a>
+            </div>
+            <div class="ribbon-utilities">
+              <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+                <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true"><i class="fas fa-sun"></i></span>
+                <span class="theme-toggle-track" aria-hidden="true">
+                  <span class="theme-toggle-thumb"></span>
+                </span>
+                <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true"><i class="fas fa-moon"></i></span>
+              </button>
+              <div class="ribbon-search">
+                <div class="search-container">
+                  <input type="text" id="paper-search" placeholder="Search papers..." aria-label="Search papers" inputmode="search" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" />
+                  <button id="clear-search" class="clear-btn" aria-label="Clear search" type="button" style="display:none;">×</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======================== PUBLICATIONS ======================== -->
+          <div id="publications">
+            <div class="section-ribbon">
+              <div class="ribbon-nav">
+                <a href="#publications" class="ribbon-link active">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span class="ribbon-label">Publications</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#working-papers" class="ribbon-link inactive">
+                  <i class="fas fa-file-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Working Papers</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#work-in-progress" class="ribbon-link inactive">
+                  <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Work in Progress</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="https://doi.org/10.1016/j.jedc.2023.104709"><i class="fa fa-book" aria-hidden="true"></i> Domestic Barriers to Entry and External Vulnerability in Emerging Economies</a>
+              </h4>
+              <div class="authors">
+                with <a href="https://sites.google.com/view/alanfinkelsteinshapiro"><span class="author-name">Alan Finkelstein-Shapiro</span></a> and <a href="https://sites.google.com/site/victorianuguer/"><span class="author-name">Victoria Nuguer</span></a>
+              </div>
+              <div class="journal-version">
+                <span class="journal-bold">Journal of Economic Dynamics and Control</span>, <span class="version">Vol. 154, September 2023</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="https://doi.org/10.1016/j.jedc.2023.104709">Journal Version</a>
+                <a class="tag-label" href="pdf/JEDC_domestic_barriers.pdf">PDF</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">Emerging economies (EMEs) exhibit high regulatory costs of firm creation. At the same time, lower firm-creation costs are associated with greater financial development and use of formal credit, which can expose EME firms to external financial shocks that propagate to EMEs via the banking system such as those that EMEs experienced during the Global Financial Crisis. We present evidence showing that in response to an adverse shock to the US banking system, EMEs with low firm-creation costs exhibit smaller contractions and earlier recoveries in cross-border bank flows, domestic bank credit, and GDP compared to EMEs with high firm-creation costs. A two-country model with banking frictions, cross-border bank flows, and endogenous firm entry can successfully capture this evidence. Our findings suggest that greater domestic credit-market deepening via lower barriers to firm entry in EMEs need not be associated with greater macro and domestic credit-market volatility.</p>
+                </details>
+              </div>
+            </div>
+
+          </div><!-- /publications -->
+
+          <!-- ======================== WORKING PAPERS ======================== -->
+          <div id="working-papers">
+            <div class="section-ribbon">
+              <div class="ribbon-nav">
+                <a href="#publications" class="ribbon-link inactive">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span class="ribbon-label">Publications</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#working-papers" class="ribbon-link active">
+                  <i class="fas fa-file-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Working Papers</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#work-in-progress" class="ribbon-link inactive">
+                  <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Work in Progress</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- JMP -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/Barreto_JMP.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Debt-Financed Fiscal Stimulus, Heterogeneity, and Welfare</a>
+              </h4>
+              <div class="authors">
+                Leonardo Barreto
+                <span class="version">&mdash; Job Market Paper &mdash; Version: November 2025</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/Barreto_JMP.pdf">PDF</a>
+                <a class="tag-label" href="https://github.com/LeonardoBarretoV/JMP">Code</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">This paper studies the welfare consequences of the debt-financed fiscal stimulus implemented in the United States during the 2020 recession. I develop an open-economy heterogeneous-agent model calibrated to the U.S. and compute a transition between a pre-stimulus stationary equilibrium and a new equilibrium with a higher debt-to-GDP ratio resulting from the fiscal response to the recession. The transition path incorporates the observed evolution of government policies from 2020 to 2024. The model reproduces the dynamics of U.S. households' self-reported well-being through a novel empirical validation exercise that mimics their survey responses and rationalizes a puzzling fact in the literature: household well-being remained depressed during 2023 and 2024 despite low levels of unemployment and inflation. The mechanism behind this result is a gradual reallocation of assets: low- and middle-income households spend their stimulus transfers early in the transition and subsequently decumulate savings, while high-income households absorb these assets and expand their wealth holdings, leaving the average household worse off through 2023&ndash;2024. The government policy generates lifetime welfare gains concentrated at the bottom of the wealth distribution, while those at the top experience small losses. Stimulus checks and the revaluation of assets are the key drivers of these results. In the counterfactual exercises, I find scope for further increases in debt and better-designed tax policies that increase welfare.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Official Sovereign Debt -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/official_ab.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Official Sovereign Debt</a>
+              </h4>
+              <div class="authors">
+                with <a href="https://www.cristinaarellano.com/"><span class="author-name">Cristina Arellano</span></a>
+                <span class="version">&mdash; Version: November 2025</span>
+              </div>
+              <div class="status-journal">
+                <span class="status-light">Revise and Resubmit, </span><span class="journal-bold">Quarterly Journal of Economics</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/official_ab.pdf">PDF</a>
+                <a class="tag-label" href="pdf/slides_official.pdf">Slides</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">This paper studies sovereign debt from official lenders empirically and theoretically. We document that official sovereign debt is more than half of the total sovereign debt in emerging markets and tends to flow in during default episodes. We then develop a model in which a sovereign borrows from official and private lenders, can partially and selectively default on each, and faces bond prices that compensate for default losses. Official debt differs from private debt in that it is of longer duration and more concessional after a default. Default does not preclude borrowing, and episodes end when the sovereign repays accrued obligations and deleverages to sustainable debt levels. A main finding is that longer-duration official debt carries greater debt capacity because it can constrain future governments from borrowing and allows future pledgeable resources to strengthen its repayment incentives. Our model rationalizes the stylized facts, including that official debt flows in during defaults and the sovereign ends the episode with a portfolio of longer-duration official debt. Counterfactuals show that Pareto-improving voluntary swaps exchanging one type of debt for another can be feasible and provide guidance for the contractual design of official debt.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Sovereign Default Risk -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/sovereign-risk-monetary.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Sovereign Default Risk, Monetary Policy and Global Financial Conditions</a>
+              </h4>
+              <div class="authors">
+                Leonardo Barreto
+                <span class="version">&mdash; Version: November 2024</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/sovereign-risk-monetary.pdf">PDF</a>
+                <a class="tag-label" href="pdf/slides-sovereign-risk-monetary.pdf">Slides</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">This paper explores the macroeconomic implications of tight global financial conditions in a small open economy New Keynesian model with sovereign default. My analysis shows that the interplay between the government incentives to repay the debt and inflation during periods of high world interest rates has distinct implications for monetary policy. I show that a monetary easing may emerge when a world interest rate hike induces a substantial increase in the probability of default, depressing domestic demand and leading firms to reduce inflation. This default amplification channel complements the expenditure-switching and expenditure-reducing channels found in standard open economy models, and rationalizes why emerging economies might reduce monetary policy rates when the Federal Reserve tightens. An increase in sovereign risk reduces aggregate domestic demand beyond these conventional channels, leading a real exchange rate depreciation to be contractionary for output.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Fiscal Rules -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/fiscal-rules.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Strategic Enforcement of Fiscal Rules under Sovereign Risk</a>
+              </h4>
+              <div class="authors">
+                with <a href="https://www.worldbank.org/en/about/people/e/ergys-islamaj#1"><span class="author-name">Ergys Islamaj</span></a>, <a href="http://www.agustinsamano.com/"><span class="author-name">Agustin Samano</span></a>, and <a href="https://sites.google.com/view/scottsommers/"><span class="author-name">Scott Sommers</span></a>
+                <span class="version">&mdash; Version: November 2024</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/fiscal-rules.pdf">PDF</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">Motivated by an unprecedented deviation from fiscal rules observed during the COVID-19 pandemic, we develop a sovereign debt model with strategic enforcement of fiscal rules. Empirically, we document that the presence of fiscal rules is statistically significantly associated with lower sovereign spreads during the COVID-19 crisis. This correlation persists even when nations deviate from the rule, suggesting that financial markets do not penalize deviations from the rule during global crises due to an expectation of post-crisis compliance. To test our hypothesis, we enhance a sovereign debt model with the possibility of deviating from the fiscal rule by imposing an exogenous cost of deviation. We show that, if there is no deviation cost during a global crisis, the model can rationalize quantitatively the sovereign spread compressing effect of fiscal rules. Overall, the findings suggest that fiscal rules can help emerging markets and developing economies signal fiscal responsibility during episodes of global financial stress, reducing borrowing costs relative to countries without fiscal rules.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Currency Composition -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/currency_composition.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Sovereign Debt, Currency Composition, and Financial Repression</a>
+              </h4>
+              <div class="authors">
+                with <a href="https://www.teresabalestrini.com/"><span class="author-name">Teresa Balestrini</span></a> and <a href="https://carlosbolivar.info/"><span class="author-name">Carlos Bolivar</span></a>
+                <span class="version">&mdash; Version: September 2024</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/currency_composition.pdf">PDF</a>
+                <a class="tag-label" href="pdf/slides-currency.pdf">Slides</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">This paper examines the interaction between the currency denomination of sovereign debt and the composition of its holders. We document that, in emerging economies, local-currency bonds constitute the main instrument of government debt and are predominantly held by domestic investors. We develop a framework that characterizes the trade-offs governments face when domestic and foreign demand for bonds respond differently to policy changes. Domestic investors prefer local-currency bonds because these assets provide insurance against distortionary taxation. The government internalizes how currency denomination influences domestic demand and default risk, generating a novel endogenous link between the composition of bondholders and the choice of currency. Even abstracting from the standard hedging benefits against output fluctuations, it remains optimal for the government to issue local-currency debt to stimulate domestic demand, consistent with empirical evidence. Finally, we show that imposing minimum domestic holdings of foreign-currency bonds through financial repression can implement the optimal allocation without relying on local-currency issuance.</p>
+                </details>
+              </div>
+            </div>
+
+            <!-- Nonconventional -->
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <a href="pdf/CEDE_masters_thesis.pdf"><i class="fas fa-file-alt" aria-hidden="true"></i> Nonconventional Monetary Policy in a Regime-Switching Model with Endogenous Financial Crises</a>
+              </h4>
+              <div class="authors">
+                Leonardo Barreto
+                <span class="version">&mdash; Version: June 2018</span>
+              </div>
+              <div class="journal-version">
+                <span class="journal-bold">Documentos CEDE</span>
+              </div>
+              <div class="extra-links">
+                <a class="tag-label" href="pdf/CEDE_masters_thesis.pdf">PDF</a>
+                <details class="abstract-details">
+                  <summary>Abstract</summary>
+                  <p class="abstract-text">This paper develops a regime-switching New Keynesian model for a small open economy, with an occasionally binding financial friction that allows for endogenous financial crises. The model has two regimes: a regime for normal economic times, in which financial market access is unconstrained, and a crisis regime, characterized by curtailed access to foreign borrowing. The transition probability between regimes depends on the endogenous variables of the model. We employ this framework to analyze the macroeconomic implications of adapting the Inflation Targeting (IT) strategy in a way that takes into account the possibility to prevent the occurrence of financial crises. We calibrate the model using Colombian historical data. The results show that monetary policy has major limitations when it seeks to prevent financial crises. As the central bank gives more importance to the GDP growth gap, the frequency with which crises occur decreases. However, this reduction is quantitatively small. On the other hand, as the monetary authority responds more strongly to increases in the external debt growth rate, the frequency with which the economy goes into crisis is not significantly different from the current IT scheme. However, the volatilities of inflation and consumption are much higher.</p>
+                </details>
+              </div>
+            </div>
+
+          </div><!-- /working-papers -->
+
+          <!-- ======================== WORK IN PROGRESS ======================== -->
+          <div id="work-in-progress">
+            <div class="section-ribbon">
+              <div class="ribbon-nav">
+                <a href="#publications" class="ribbon-link inactive">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span class="ribbon-label">Publications</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#working-papers" class="ribbon-link inactive">
+                  <i class="fas fa-file-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Working Papers</span>
+                </a>
+                <span class="ribbon-sep">|</span>
+                <a href="#work-in-progress" class="ribbon-link active">
+                  <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+                  <span class="ribbon-label">Work in Progress</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="paper-card">
+              <h4 style="margin-top:0;">
+                <i class="fa fa-pencil-alt" aria-hidden="true"></i> Fiscal Heterogeneity and Common Debt in the Euro Area
+              </h4>
+              <div class="authors">
+                with <a href="https://sites.google.com/view/juliana-gamboa-arbelaez/home"><span class="author-name">Juliana Gamboa-Arbelaez</span></a>
+              </div>
+            </div>
+
+          </div><!-- /work-in-progress -->
+
+          <div id="sticky-ribbon-spacer"></div>
+
+        </div><!-- /content -->
+
+        <footer>
+          <div class="poweredby">
+            This design was built on <a href="https://github.com/excentris/compass">Compass</a>.
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/sticky-ribbon-spacer.js"></script>
+  <script src="js/sticky-ribbon-scroll.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/sticky-ribbon-scrollspy.js"></script>
+  <script src="js/theme-toggle.js"></script>
+
+</body>
+</html>
