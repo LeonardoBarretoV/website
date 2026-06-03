@@ -314,6 +314,39 @@ html {
   color: #7f0a20;
   opacity: 0.9; }
 
+.research-box {
+  background: #eef5fd;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 0.75em 1.2em;
+  margin-bottom: 1.2em;
+  width: 100%;
+  box-sizing: border-box; }
+
+.research-title {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: #7f0a20;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35em; }
+
+.research-text {
+  font-size: 0.92em;
+  color: #37352c;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0; }
+
+html[data-theme="dark"] .research-box {
+  background: #1a2028; }
+
+html[data-theme="dark"] .research-title {
+  color: #e28763; }
+
+html[data-theme="dark"] .research-text {
+  color: #b8a898; }
+
 .sidebar-menu {
   display: flex;
   flex-direction: column;
