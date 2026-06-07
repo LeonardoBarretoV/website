@@ -55,7 +55,7 @@ html {
   display: flex;
   align-items: center;
   gap: 0;
-  background: #b0aaa4;
+  background: #d0ccc6;
   border-left: 6px solid #8c1a2e;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -148,7 +148,7 @@ html {
 .sticky-ribbon {
   position: sticky;
   top: 0;
-  background: #b0aaa4;
+  background: #d0ccc6;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
   z-index: 100; }
 
