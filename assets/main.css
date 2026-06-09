@@ -200,7 +200,7 @@ html {
   min-width: 0;
   padding: 0.55em 1em;
   border-radius: 10px;
-  background: #f2efeb;
+  background: #eae7e3;
   color: #37352c;
   font-size: 0.92em;
   margin: 0.15em 0;
@@ -261,7 +261,7 @@ html {
   letter-spacing: -0.02em; }
 
 .modern-tagline {
-  background: #f2efeb;
+  background: #eae7e3;
   border-radius: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   padding: 0.8em 1.2em;
@@ -315,7 +315,7 @@ html {
   opacity: 0.9; }
 
 .research-box {
-  background: #f2efeb;
+  background: #eae7e3;
   border-radius: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   padding: 0.75em 1.2em;
